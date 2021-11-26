@@ -28,7 +28,6 @@
   "type": "module",
   "dependencies": {
     "@xstate/svelte": "^0.2.0",
-    "phoenix": "^1.6.2",
     "xstate": "^4.26.0"
   }
 }

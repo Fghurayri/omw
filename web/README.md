@@ -65,3 +65,8 @@ The supported features are:
 
 - Allow the user to select a name for the upcoming live tracking session.
 - Allow the user to start a live tracking session and copy the associated tracking link.
+
+
+## Gotchas
+
+There's a deployment to Vercel blocker when the `phoenix` package is imported via `node_modules`. To workaround that, I have copied the `phoenix` package's JS content into the project and imported it like any other local file.
