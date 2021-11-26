@@ -1,4 +1,4 @@
-import { Socket } from "phoenix";
+import * as Phoenix from "phoenix";
 import { assign, createMachine, forwardTo, send, sendParent, spawn } from "xstate";
 import { envVariables } from "../variables";
 import { createChannelMachine } from "./channel.machine";
@@ -110,7 +110,7 @@ export const socketMachine = createMachine({
     },
     services: {
       connectSocket: (_ctx, _ev) => (sendBack) => {
-        let socket = new Socket(envVariables.WS_URL, {})
+        let socket = new Phoenix.Socket(envVariables.WS_URL, {})
         socket.connect()
         socket.onOpen(() => sendBack({ type: "SOCKET_CONNECTED", socket }))
       }
